@@ -1,6 +1,10 @@
 "use strict;"
 
-export class Game {
+var oldTime;
+var paused;
+
+
+export Game {
 
   /**
    * @constructor Game
@@ -22,8 +26,8 @@ export class Game {
     this.backCtx = this.backBuffer.getContext('2d');
 
     // Start the game loop
-    this.oldTime = performance.now();
-    this.paused = false;
+    oldTime = performance.now();
+    paused = false;
     window.requestAnimationFrame(this.loop);
   }
 
@@ -33,7 +37,7 @@ export class Game {
    * @param {bool} pause true to pause, false to start
    */
   pause(flag) {
-    this.paused = (flag == true);
+    paused = (flag == true);
   }
 
   /**
@@ -43,7 +47,7 @@ export class Game {
    */
   loop(newTime) {
     var elapsedTime = newTime - this.oldTime;
-    this.oldTime = newTime;
+    oldTime = newTime;
 
     if(!this.paused) this.update(elapsedTime);
     this.render(elapsedTime, this.frontCtx);

@@ -4,6 +4,8 @@ import {Game} from './game';
 
 var canvas = document.getElementById('screen');
 var game = new Game(canvas, update, render);
+var background = new Image();
+background.src = 'assets/Menu.png';
 
 
 /**
@@ -27,6 +29,7 @@ function update(elapsedTime) {
   */
 function render(elapsedTime, ctx) {
 
-  // TODO: Draw the game objects using the supplied context
+    // TODO: Draw the game objects using the supplied context
+    if(background) ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 }

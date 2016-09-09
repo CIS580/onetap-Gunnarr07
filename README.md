@@ -7,7 +7,7 @@ The source code in the src directory is transpiled from ES6 to ES3 using Browser
 
 ```$ npm install -g browserify```
 
-```$ npm install babelify babelify-preset-es2015```
+```$ npm install babelify babel-preset-es2015```
 
 Once installed, you can transpile the current source with the command:
 
